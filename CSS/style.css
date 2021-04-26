@@ -1,0 +1,268 @@
+:root{
+/*ROOT ES PARA HACER UNOS CUSTOM PROPIERTIES PARA REUTILIZAR*/
+    --Primario: yellow;
+    --primarioOS:#89119d;
+    --secundario: #ffce00;
+    --secundarioOS: RGB(233,187,2);
+    --blanco: #fff;
+    --negro: #000;
+
+    --fuenteprincipal:'Staatliches', cursive;
+}   
+
+html {
+    box-sizing: border-box;/*NO PUEDE FALTAR EN NINGUN PROYECTO*/
+    font-size: 62.5%;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*GLOBALES*/
+
+
+body{
+    background-color: var(--Primario);
+    font-size: 1.6rem;
+    line-height: 1.5; /*INTERLINEDAO DE LA PAGINA*/
+}
+p {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;/*TIPO DE FUENTE*/
+    color: var(--blanco);
+}
+a {
+    text-decoration: none; /*QUITAR EL INTERLINEADO DEL ENLACE*/ 
+}
+img{
+    width: 100%;
+}
+
+.contenedor{
+    font-family: var(--fuenteprincipal);
+    max-width: 120rem;
+    margin: 0 auto;/*SIRVE PARA CENTRAR EN TEXTO */
+}
+
+h1, h2, h3{
+    text-align: center; /*CENTRAR EL TEXTO*/
+    color: var(--secundario);
+    font-size: var(--fuenteprincipal);/*TODOS VAN A TENER LA FUENTE QUE PREVIAMEMENTE ELEGIMOS*/
+}
+
+h1{
+font-size: 4rem;/*TAMANIOS INDIVIDUALES*/
+}
+h2{
+font-size: 3.2rem;
+}
+h3{
+font-size: 2.4rem;
+}
+
+/*header*/
+
+.header{
+    display: flex;/*Siempre que vayamos a centrar debe ir esta linea*/
+    justify-content: center;/*CENTRAR EL TEXTO HORIZONTALMENTE*/
+}
+.header__logo{ /*SELECCIONAR EL ELEMENTO PARA COLOCARLE LOS ESTILOS*/
+    margin: 3rem 0;
+}
+/*FOOTER*/   
+.footer{
+    background-color: var(--primarioOS);
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+.footer__texto{
+    text-align: center;
+    font-family: var(--fuenteprincipal);
+    font-size: 2rem;
+}
+/* BARRA DE NAVEGACION*/
+
+.navegacion{
+    background-color: var(--primarioOS); /*Franja de la barra de navegacion*/
+    padding: 1rem 0rem; /*Hacer mas grande la barra de navegacion*/
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /*Sirve para separar el texto*/ /*FORMA NUEVA*/
+
+
+}
+.navegacion__enlace{
+    font-family: var(--fuenteprincipal);
+    color: var(--blanco);
+    font-size: 30px;/*Hacer mas grande el texto*/
+    /* margin-right: 2rem; Forma vieja de alinear el texto */
+}
+.navegacion__enlace--activo,/*SIRVE PARA TENER EL COLOR PERMANENTE*/
+.navegacion__enlace:hover{
+    color: var(--secundario);
+}
+/*GRID*/
+.grid{
+    display: grid;
+    grid-template-columns: repeat(2, 1FR);
+    /* column-gap: 2rem;/*Separtacion hacia arriba*/
+    /*row-gap: 2rem; separacion hacia abajo*/
+    gap:2rem; /*version corta de el colum y el row*/
+}
+@media(min-width: 768px){
+    .grid{
+        grid-template-columns: repeat(3, 1FR); /*Pocisionamiento de los grid*/
+    }
+}
+/*PROCDUCTOS*/
+
+.producto{
+    background-color: var(--primarioOS);
+    padding: 1rem;
+}
+
+.producto__nombre{
+    font-size: 4rem; /*tamanio de letra*/
+}
+.producto__precio{
+    font-size: 2.8rem;
+    color: var(--secundario);
+    
+}
+.producto__precio:hover{
+    color: var(--negro);
+}
+
+.producto__nombre, .producto__precio{
+    font-family: var(--fuenteprincipal);
+    margin: 1rem 0;
+    text-align: center;
+    line-height: 1.2;
+}
+/*Graficos*/
+
+.grafico{
+    min-height: 30rem ;/*altura minima*/
+    background-repeat: no-repeat;
+    background-size: 100%;
+    grid-column: 1/3;
+}
+.grafico--camisas{
+    grid-row: 2/3;
+    background-image: url(../img/grafico1.jpg);/*Colocar imagen desde css*/
+}
+.grafico--node{
+    background-image: url(../img/grafico2.jpg);
+    grid-row: 8/9;
+   
+}
+
+@media(min-width: 768px){
+    .grafico--node{
+        grid-row: 5/6;
+        grid-column: 2/4;
+    }
+}
+
+/*Nosotros*/
+.nosotros{
+    display: grid;
+    grid-template-rows: repeat(2, auto);
+}
+
+@media(min-width: 768px){   
+    .nosotros{
+        display: grid;
+        grid-template-columns: repeat(2, 1FR);
+        gap: 2rem;
+    }
+}   
+.nosotros__imagen{
+    grid-row: 1/2;
+}
+@media(min-width: 768px){
+    .nosotros__imagen{
+        grid-column: 3/2;
+    }
+}
+
+/*Iconos*/
+
+.comprar{
+
+
+}
+.bloques{
+    display: grid;
+    grid-template-columns: repeat(2,1FR);   
+    gap: 2rem;
+
+}
+.bloque{
+    text-align: center;
+}
+.bloque__titulo{
+    margin: 00;
+}
+
+.bloque__imagen{
+   
+}
+
+@media(min-width: 768px){
+    .bloques{       
+    grid-template-columns: repeat(4,1FR);   
+    }   
+}
+/*Producto*/
+@media(min-width: 768px){
+    .camisa{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);/*Esto es para tener dos columnas en el grid*/
+        column-gap: 2rem;/*Separacion de columnas*/
+
+    }
+}
+
+
+/*Formularios o inputs*/
+.formulario{    
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}   
+
+.formulario__campo{
+    border: 1rem solid var(--primarioOS);
+    background-color: transparent;
+    color: var(--blanco);
+    font-size: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 1rem;
+    appearance: none;
+}
+.formulario__campo option{
+    color: var(--negro);
+}
+
+.formulario__submit{
+    background-color: yellow;
+    border: none;
+    font-size: 2rem;
+    font-family: var(--fuenteprincipal);
+    border-radius: 2px;
+    width: 50%;
+    padding: 2REM;
+    margin: 1rem;
+    transition: font-size .5s ease;/*Agregar transicion en el texto o color*/
+    grid-column: 1/3;
+    width: 100%;
+    justify-items: left;
+}
+.formulario__submit:hover{
+    font-size: 2.2rem;
+    cursor: pointer;
+    background-color: var(--secundarioOS);
+
+}

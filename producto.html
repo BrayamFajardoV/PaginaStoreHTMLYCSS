@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FrondEnd store</title>
+    <link rel="stylesheet" href="CSS/normalize.css"> <!--LINK PARA ENLAZAR EL NORMALIZE-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet"> <!--LINK PARA LA FUENTE DE HTML-->
+    <link rel="stylesheet" href="CSS/style.css"> <!--LINK PARA ENLAZAR EL DOCUMENTO CSS-->
+</head>
+</head>
+<body>
+    <header class="header"> <!--UTULIZANDO EL ENFOQUE BEM-->
+        <a href="Index.html">
+            <img class="header__logo" src="img/logo.png" alt="Logotipo"><!--COLOCAR LA IMAGEN--> <!--DOBLE GUION BAJO ES PARA LOS ELEMENTOS-->
+        </a>
+    </header>
+
+    <nav class="navegacion">
+        <a class="navegacion__enlace navegacion__enlace--activo" href="Index.html">Tienda</a>
+        <a class="navegacion__enlace" href="nostros.html">Nosotros</a>
+    </nav>
+    <main class="contenedor">
+        <h1>ReactJS</h1>      
+        <DIV class="camisa">
+            <img class="camisa__imagen" src="img/3.jpg" alt="imagen del producto">
+
+            <div   class="camisa__contenido" >
+                <p>
+                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic qui perferendis quam dignissimos, 
+                    ipsum vel autem ipsa cupiditate accusamus repudiandae, accusantium excepturi eligendi assumenda. Cumque iste rerum sapiente debitis vitae!
+                </p>
+                <form class="formulario">
+                       <select class="formulario__campo">
+                        <option disabled selected>Seleciona el tipo de camiseta</option>  
+                        <option >HOMBRE</option>
+                        <option >MUJER</option>
+                        <option >ESTANDAR</option>
+                       </select>
+                        <input class="formulario__campo" type="number" placeholder="candidad" min="1">  
+                        <input class="formulario__submit"  type="submit" value="agregar al carrito">                     
+                </form>   
+            </div>
+        </DIV>  
+    </main>
+
+    <footer class="footer">
+        <p class="footer__texto">Front-End - Todos los derechos reservados a Brayam fajardo </p>
+    </footer>
+</body>
+</html>
